@@ -10,7 +10,7 @@ token = os.getenv("DISCORD_BOT_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix="!", intents=intents) #發送訊息前的字元
+bot = commands.Bot(command_prefix="", intents=intents) #發送訊息前的字元
 
 @bot.command(name="gay") #一般訊息回覆
 async def gay(ctx):
@@ -43,7 +43,7 @@ async def Re(ctx):
 
 #剪刀石頭布
 @bot.hybrid_command(nmae="play") 
-async def play_game(ctx):
+async def play(ctx):
     await ctx.send("運氣 也是實力的一部分喔", view= PlayView())
 
 class PlayView(discord.ui.View):
@@ -81,7 +81,7 @@ class PlayView(discord.ui.View):
 
 #學校功能
 @bot.hybrid_command(name="行事曆")
-async def 行事曆(ctx):
+async def lir(ctx):
     if os.path.exists("day1.png"):
         await ctx.send(file=discord.File("day1.png"))
         await ctx.send(file=discord.File("day2.png"))
