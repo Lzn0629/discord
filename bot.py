@@ -10,7 +10,7 @@ token = os.getenv("DISCORD_BOT_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix="", intents=intents) #發送訊息前的字元
+bot = commands.Bot(command_prefix="!", intents=intents) #發送訊息前的字元
 
 @bot.command(name="gay") #一般訊息回覆
 async def gay(ctx):
